@@ -1,4 +1,4 @@
-cat > README.md << 'EOF'
+
 # Event Booking System — Java & JavaFX
 
 A full-stack desktop application built in Java with JavaFX for managing event bookings, developed as a Software Design & Analysis semester project.
