@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.CustomerDashboardController"
+            style="-fx-background-color: #f5f7fa;">
+    
+    <!-- Top Bar -->
+    <top>
+        <HBox spacing="15" alignment="CENTER_LEFT" 
+              style="-fx-background-color: linear-gradient(to right, #a1c4fd, #c2e9fb); -fx-padding: 15;">
+            <Label text="Customer Dashboard" 
+                   style="-fx-text-fill: #34495e; -fx-font-size: 22px; -fx-font-weight: bold;" />
+            <Label fx:id="welcomeLabel" style="-fx-text-fill: #34495e; -fx-font-size: 14px;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout"
+                    style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 12; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);" />
+        </HBox>
+    </top>
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox spacing="15" style="-fx-padding: 20;" prefWidth="220">
+            <Button fx:id="searchVenuesButton" text="🔍 Search Venues" onAction="#handleSearchVenues" 
+                    style="-fx-background-color: #6dd5ed; -fx-text-fill: white; -fx-font-size: 14; -fx-background-radius: 12; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);" 
+                    prefWidth="180" prefHeight="45" />
+                    
+            <Button fx:id="myBookingsButton" text="📅 My Bookings" onAction="#handleMyBookings" 
+                    style="-fx-background-color: #56abf9; -fx-text-fill: white; -fx-font-size: 14; -fx-background-radius: 12; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);" 
+                    prefWidth="180" prefHeight="45" />
+                    
+            <Button fx:id="paymentRecordsButton" text="💰 Payment Records" onAction="#handlePaymentRecords" 
+                    style="-fx-background-color: #34e89e; -fx-text-fill: white; -fx-font-size: 14; -fx-background-radius: 12; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);" 
+                    prefWidth="180" prefHeight="45" />
+                    
+            <Button fx:id="profileButton" text="👤 My Profile" onAction="#handleProfile" 
+                    style="-fx-background-color: #f9d423; -fx-text-fill: #34495e; -fx-font-size: 14; -fx-background-radius: 12; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);" 
+                    prefWidth="180" prefHeight="45" />
+        </VBox>
+    </left>
+
+    <!-- Center Content Area -->
+    <center>
+        <StackPane fx:id="contentArea" 
+                   style="-fx-background-color: #ffffff; -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+            <Label text="Welcome to Customer Dashboard! 👋&#10;Select an option from the left menu to get started." 
+                   style="-fx-font-size: 16px; -fx-text-alignment: center; -fx-text-fill: #34495e;" 
+                   alignment="CENTER" wrapText="true"/>
+        </StackPane>
+    </center>
+
+</BorderPane>

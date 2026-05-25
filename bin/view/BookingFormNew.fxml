@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.BookingFormController"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            vbarPolicy="AS_NEEDED">
+    
+    <content>
+        <VBox spacing="15" alignment="TOP_LEFT" padding="20">
+            
+            <Label text="Book Your Event" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="100"/>
+                    <ColumnConstraints halignment="LEFT" minWidth="250" hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <!-- Event Name -->
+                <Label text="Event Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="eventNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <!-- Event Type -->
+                <Label text="Event Type:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="eventTypeCombo" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <!-- Event Date -->
+                <Label text="Event Date:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="eventDatePicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <!-- Start Time -->
+                <Label text="Start Time:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="startTimeField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <!-- End Time -->
+                <Label text="End Time:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="endTimeField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <!-- Number of Guests -->
+                <Label text="Number of Guests:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <TextField fx:id="numberOfGuestsField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <!-- Special Requests -->
+                <Label text="Special Requests:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <TextArea fx:id="specialRequestsArea" GridPane.rowIndex="6" GridPane.columnIndex="1" prefRowCount="3"/>
+
+                <!-- Contact Person -->
+                <Label text="Contact Person:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                <TextField fx:id="contactPersonField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                <!-- Contact Phone -->
+                <Label text="Contact Phone:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                <TextField fx:id="contactPhoneField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+            </GridPane>
+            
+            <!-- Submit Button -->
+            <Button fx:id="submitButton" text="Book Now" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" maxWidth="200"/>
+
+        </VBox>
+    </content>
+</ScrollPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx/17" 
+           xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="controller.RegisterController"
+           style="-fx-background-color: linear-gradient(to bottom right, #667eea 0%, #764ba2 100%);">
+    
+    <ScrollPane fitToWidth="true" fitToHeight="true"
+                style="-fx-background: transparent; -fx-background-color: transparent;"
+                hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+        
+        <VBox alignment="CENTER" spacing="30" style="-fx-padding: 50;">
+            
+            <!-- Card Container -->
+            <VBox alignment="CENTER" spacing="25"
+                  style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 30, 0, 0, 10);"
+                  maxWidth="500">
+                
+                <padding>
+                    <Insets top="40" right="50" bottom="40" left="50"/>
+                </padding>
+                
+                <!-- Title -->
+                <Label text="Create Account" textFill="#2c3e50" 
+                       style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+                
+                <!-- Form Fields -->
+                <VBox spacing="15" prefWidth="400">
+                    
+                    <Label text="Full Name *" />
+                    <TextField fx:id="fullNameField" promptText="Enter your full name" />
+                    
+                    <Label text="Email *" />
+                    <TextField fx:id="emailField" promptText="Enter your email" />
+                    
+                    <Label text="Phone Number" />
+                    <TextField fx:id="phoneField" promptText="Enter your phone number" />
+                    
+                    <Label text="Password *" />
+                    <PasswordField fx:id="passwordField" promptText="Enter password (min 6 characters)" />
+                    
+                    <Label text="Confirm Password *" />
+                    <PasswordField fx:id="confirmPasswordField" promptText="Confirm your password" />
+                    
+                    <Label text="Account Type *" />
+                    <ComboBox fx:id="userTypeComboBox" prefWidth="200" />
+                    
+                    <VBox fx:id="additionalFields" spacing="10">
+                        <!-- Dynamic fields will be added here based on user type -->
+                    </VBox>
+                    
+                </VBox>
+                
+                <!-- Create Account Button -->
+                <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleRegister" 
+                        prefHeight="45" prefWidth="220"
+                        style="-fx-background-color: linear-gradient(to right, #27ae60, #2ecc71); -fx-text-fill: white; -fx-background-radius: 10; -fx-font-weight: bold; -fx-font-size: 15px;"
+                        text="Create Account" />
+                
+                <!-- Login Link -->
+                <Hyperlink fx:id="loginLink" onAction="#handleLoginLink" 
+                           text="Already have an account? Login here" style="-fx-text-fill: #667eea; -fx-font-size: 13px;" />
+                
+                <!-- Message Label -->
+                <Label fx:id="messageLabel" textFill="#e74c3c" wrapText="true" textAlignment="CENTER" />
+                
+            </VBox>
+            
+        </VBox>
+        
+    </ScrollPane>
+    
+</StackPane>
