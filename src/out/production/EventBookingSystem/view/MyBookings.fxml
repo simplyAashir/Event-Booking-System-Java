@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.MyBookingsController"
+      spacing="20" style="-fx-padding: 20;">
+   
+   <Label text="📅 My Bookings" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+   
+   <!-- Filter Options -->
+   <HBox spacing="15" alignment="CENTER_LEFT">
+      <Label text="Filter by status:" />
+      <ComboBox fx:id="statusFilterCombo" />
+      <Button fx:id="refreshButton" text="🔄 Refresh" onAction="#handleRefresh" />
+   </HBox>
+   
+   <!-- Bookings List -->
+   <VBox spacing="10">
+      <Label fx:id="resultsLabel" text="Loading your bookings..." style="-fx-font-size: 14; -fx-text-fill: #7f8c8d;" />
+      
+      <ScrollPane fitToWidth="true" style="-fx-max-height: 500;">
+         <VBox fx:id="bookingsContainer" spacing="10" />
+      </ScrollPane>
+   </VBox>
+
+</VBox>

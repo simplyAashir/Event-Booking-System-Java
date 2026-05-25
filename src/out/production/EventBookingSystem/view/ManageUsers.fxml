@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17" 
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.ManageUsersController"
+      spacing="20" style="-fx-padding: 20;">
+   
+   <Label text="👥 Manage Users" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+   
+   <!-- Action Buttons -->
+   <VBox spacing="15" style="-fx-background-color: #ecf0f1; -fx-padding: 20; -fx-border-radius: 10;">
+      <Label text="User Management" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+      
+      <HBox spacing="15" alignment="CENTER_LEFT">
+         <Button text="➕ Add New User" onAction="#handleAddUser" 
+                 style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 150;"/>
+         <Button fx:id="refreshButton" text="🔄 Refresh" onAction="#handleRefresh" 
+                 style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-pref-width: 100;"/>
+      </HBox>
+   </VBox>
+   
+   <!-- Filter Section -->
+   <VBox spacing="15" style="-fx-background-color: #fff5e6; -fx-padding: 20; -fx-border-radius: 10;">
+      <Label text="🔍 Filter Users" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+      
+      <HBox spacing="15" alignment="CENTER_LEFT">
+         <VBox spacing="5">
+            <Label text="User Type:" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="userTypeFilterCombo" style="-fx-pref-width: 150;"/>
+         </VBox>
+         
+         <VBox spacing="5">
+            <Label text="Status:" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="statusFilterCombo" style="-fx-pref-width: 120;"/>
+         </VBox>
+         
+         <VBox spacing="5">
+            <Label text="Search:" style="-fx-font-weight: bold;"/>
+            <HBox spacing="5">
+               <TextField fx:id="searchField" promptText="Search users..." style="-fx-pref-width: 200;"/>
+               <Button fx:id="searchButton" text="🔍 Search" onAction="#handleSearch" 
+                       style="-fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+            </HBox>
+         </VBox>
+      </HBox>
+   </VBox>
+   
+   <!-- Results Section with ScrollPane -->
+   <VBox spacing="15">
+      <Label fx:id="resultsLabel" text="Loading users..." style="-fx-font-size: 14; -fx-font-weight: bold;" />
+      
+      <!-- Scrollable Users Container -->
+      <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-border-radius: 10;" prefHeight="400">
+         <content>
+            <VBox fx:id="usersContainer" spacing="10" style="-fx-padding: 10;" />
+         </content>
+      </ScrollPane>
+   </VBox>
+
+</VBox>
